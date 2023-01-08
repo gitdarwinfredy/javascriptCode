@@ -56,26 +56,26 @@ if (!conteo){
 
 
 // boton para contar texto
-const boton = document.getElementById('boton');
 
-boton.addEventListener('click', function (e){
-
-const texto1= document.getElementById('text1').value
 const forms = document.getElementById('forms');
-console.log(texto1)
+forms.addEventListener('submit', function (e){
+
+const input= document.getElementById('input').value
+
+console.log(input)
 const fila = e.target
 console.log(fila)
 
     let conteoTexto2="" 
 
-if (!texto1){
+if (!input){
     alert('no ha ingresado Texto')
     } else{
-    conteoTexto2 = `la cadena es ${texto1.length}`
+    conteoTexto2 = `la cadena es ${input.length}`
     
     }
     document.getElementById('text2').innerHTML = conteoTexto2
-    
+    forms.reset()
   
 })
 

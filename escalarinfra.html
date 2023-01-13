@@ -1,0 +1,1300 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- styles -->
+    <link
+      rel="stylesheet"
+      href="./bootstrap.min.css"
+    />
+
+    <title>Escalamiento Infraestructura</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark" style="background-color: #002E6C;">
+      <h1 style="color: floralwhite;">Escalamiento Infraestructura</h1> <a style="color: floralwhite">Versión 1.6</a>
+    </nav>
+     
+    <div class="jumbotron">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <p>
+              <b
+                >Todos los campos son obligatorios para escalar, al seleccionar
+                el proceso, productos y motivo del escalamiento le cargan los
+                campos obligatorios para cada combinación.
+              </b>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h3>
+              Si el cable modem es <b style="color: red;">Obsoleto</b> tiene que
+              cambiarlo antes de escalar
+            </h3>
+          </div>
+        </div>
+        <div class="row  align-items-center">
+           
+          
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 ">
+                <button type="button"class="btn btn-danger offset-sm-10"onclick="limpiar()">
+                    Limpiar
+                </button>
+            </div>
+        </div>
+        
+
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group row">
+                    <label for="afoto" class="col-12 col-sm-2 "
+                    >¿Adjuntó la foto?</label
+                    >
+                    <select
+                    name="Adjuntó Foto?"
+                    id="afoto"
+                    class="form-control col-10 offset-1 offset-sm-0 col-sm-4"
+                    >
+                    <option selected disabled value="">Selecccionar</option>
+                    <option value="SI">SI</option>
+                    <option value="NO">NO</option>
+                    </select>
+                </div>
+                <div class="form-group row">
+                    <label for="psmnet" class="col-12 col-sm-2 ">
+                    ¿Realizó prueba SMNet?
+                    </label>
+                    <select name="ID Prueba" id="psmnet" class="col-10 offset-1 offset-sm-0 col-sm-4 form-control">
+                    <option selected disabled value="">Selecccionar</option>
+                    <option value="si">SI</option>
+                    <option value="no">NO</option>
+                    </select>
+                </div>
+
+                <div class="form-group row">
+                    <label for="Proceso" class="col-12 col-sm-2 ">Proceso</label>
+                    <div class="col-12 col-sm-8">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="proceso" id="inlineRadio1" value="Instalación">
+                            <label class="form-check-label" for="inlineRadio1">Instalación</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="proceso" id="inlineRadio2" value="Reparación">
+                            <label class="form-check-label" for="inlineRadio2">Reparación</label>
+                        </div>
+                    </div>             
+                </div>
+
+                <div class="form-group row">
+                    <label for="Proceso" class="col-12 col-sm-2 ">Producto</label>
+                    <div class="col-12 col-sm-8 ">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="producto" id="prod1" value="Intert/TOIP">
+                            <label class="form-check-label" for="prod1">Intert/TOIP</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="producto" id="prod2" value="TV">
+                            <label class="form-check-label" for="prod2">TV</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="producto" id="prod3" value="Intert/TOIP/TV">
+                            <label class="form-check-label" for="prod3">Intert/TOIP/TV</label>
+                        </div>
+                    </div>             
+                </div>
+
+                <div class="form-group row">
+                    <label for="Celular Técnico" class="col-12 col-sm-2">Celular Técnico</label>
+                    <input type="number" name="Celular Técnico" id="Celular Técnico" class="form-control col-10 offset-1 offset-sm-0 col-sm-4 "/>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <form name="escalamiento" id="escalamiento">
+                    
+                    <div class="form-group row">
+                      <label for="Tarea" class="col-12 col-sm-2 ">Tarea</label>
+                      <input type="number" name="Tarea" id="Tarea" class="form-control col-10 offset-1 offset-sm-0 col-sm-4" />
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="Motivo del Escalamiento" class="col-12 col-sm-2">
+                            Motivo del Escalamiento
+                        </label>
+                        <select name="Motivo del Escalamiento" id="mdescala" class="form-control col-10 offset-1 offset-sm-0 col-sm-4">
+                        <option selected disabled value="">Selecccionar</option>
+                        <option>Niveles deficientes</option>
+                        <option>Sin señal</option>
+                        <option>Daño físico</option>
+                        <option>Robo de TAP</option>
+                        <option>Sin retorno</option>
+                        <option>Red caída</option>
+                        <option>Pixelación</option>
+                        <option>Intermitencia</option>
+                        <option>Otros</option>
+                      </select>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <h3>
+                                La marca del TAP es la placa roja con la cual esta numerado el TAP
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="Marcación TAP" class="col-12 col-sm-2">Marcación TAP </label>
+                        <input
+                            type="number"
+                            name="MarcaTAP"
+                            id=""
+                            class="form-control col-10 offset-1 offset-sm-0 col-sm-4"
+                        />
+                    </div>
+                    <div class="form-group row">
+                        <label for="Dirección del TAP" class="col-12 col-sm-2">Dirección del TAP</label>
+                        <input  
+                        type="text" name="DirTAP" id="Dirección del TAP" 
+                        class="form-control col-10 offset-1 offset-sm-0 col-sm-4"/>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="VTap" class="col-12 col-sm-2">Valor del TAP</label>
+                        <select
+                        name="VTap"
+                        id="VTap"
+                        class="col-10 offset-1 offset-sm-0 col-sm-4 form-control"
+                        >
+                            <option selected disabled value="">Selecccionar</option>
+			    <option>0</option>
+			    <option>ROBADO</option>
+                            <option>2x4</option>
+                            <option>2x8</option>
+                            <option>2x11</option>
+                            <option>2x14</option>
+                            <option>2x17</option>
+                            <option>2x20</option>
+                            <option>2x23</option>
+                            <option>2x26</option>
+                            <option>2x29</option>
+                            <option>2x32</option>
+                            <option>4x8</option>
+                            <option>4x11</option>
+                            <option>4x14</option>
+                            <option>4x17</option>
+                            <option>4x20</option>
+                            <option>4x23</option>
+                            <option>4x26</option>
+                            <option>4x29</option>
+                            <option>4x32</option>
+                            <option>8x11</option>
+                            <option>8x14</option>
+                            <option>8x17</option>
+                            <option>8x20</option>
+                            <option>8x23</option>
+                            <option>8x26</option>
+                            <option>8x29</option>
+                            <option>8x32</option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <label for="MAC Equipo de Medida" class="col-12 col-sm-2" >MAC Equipo de Medida</label>
+                        <input
+                        /*onchange="puntosm()"*/
+                        style="text-transform:uppercase;"
+                        type="text"
+                        maxlength="12"
+                        name="MacDSAM"
+			                  id="maceqm"
+                        class="form-control col-10 offset-1 offset-sm-0 col-sm-4"
+			
+                        />
+                    </div>
+                    
+                    <div class="form-group row">
+                      <label for="Mac Real CPE" class="col-10 col-sm-2">Mac Real CPE</label>
+                      <input
+                        /*onchange="puntos()"*/
+                        type="text"
+                        style="text-transform:uppercase;"
+                        maxlength="17"
+                        name="Mac Real CPE"
+			                        id="mac"
+                        class="form-control col-10 offset-1 col-sm-4 offset-sm-0"
+                      />
+                    </div>
+
+                    <div id="dinamico">
+                        <!-- aca se dibujan los campos dinamicamente -->
+                    </div>
+                    
+
+
+                   <div class="form-group row">
+                      <label for="Marquilla?" class="col-12 col-sm-2 ">
+                      Instaló correa de marcación
+                      </label>
+                      <select name="Marquilla?" id="Marquilla?" class="col-10 offset-1 offset-sm-0 col-sm-4 form-control">
+                      <option selected disabled value="">Selecccionar</option>
+                      <option value="SI">SI</option>
+                      <option value="NO">NO</option>
+                      </select>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="observ" class="col-12 col-sm-4">
+                        Observación
+                    </label>
+                    <textarea
+                        name="Observación"
+                        rows="2"
+                        
+                        id="observ"
+                        class="col-10 offset-1 col-sm-10 offset-sm-0 form-control"></textarea>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-12 col-sm-2">
+                      <input type="button" onclick="unirDatos()" 
+                      value="Unir Datos" 
+                      class="btn btn-primary "
+                      />
+                  </div>
+              </div>                 
+
+                  </form>
+
+                  <div class="form-group row">
+                    <label for="plantilla" class="col-12 col-sm-4">
+                        Plantilla
+                    </label>
+                    <textarea
+                        name="plantilla"
+                        rows="6"
+                        readonly="readonly"
+                        id="plantilla"
+                        class="col-10 offset-1 col-sm-10 offset-sm-0 form-control"></textarea>
+                </div>
+                <div class="form-group row">
+                  <div class="col">
+                      <input type="button" onclick="copiarDatos()" 
+                      value="Copiar Datos"
+                      class="btn btn-secondary"
+                      />
+                  </div>
+              </div>
+
+            </div>
+        </div>      
+
+
+  
+
+     
+    </div>
+
+    <!-- bootstrap dependencies -->
+    <!-- <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script> -->
+
+    <!-- procesamiento del formulario -->
+    <script>
+      window.onload = () => {
+        let resProceso = null,
+          resProducto = null,
+          resMotivo = null;
+        let proceso = document.getElementsByName("proceso");
+        for (let index = 0; index < proceso.length; index++) {
+          proceso[index].addEventListener("change", (el) => {
+            resProceso = el.target.value;
+            checkCondicion(resProceso, resProducto, motivo);
+          });
+        }
+        let producto = document.getElementsByName("producto");
+        for (let index = 0; index < producto.length; index++) {
+          producto[index].addEventListener("change", (el) => {
+            resProducto = el.target.value;
+            checkCondicion(resProceso, resProducto, motivo);
+          });
+        }
+        let motivo = document
+          .getElementById("mdescala")
+          .addEventListener("change", (el) => {
+            resMotivo = el.target.value;
+            checkCondicion(resProceso, resProducto, resMotivo);
+          });
+      };
+      function checkCondicion(proceso, producto, motivo) {
+        // console.log(proceso,producto,motivo)
+        if (
+          proceso === "Reparación" &&
+          producto === "Intert/TOIP" &&
+          motivo === "Sin señal"
+        ) {
+          document.getElementById("dinamico").innerHTML = element.chbalance;
+        } else if (
+          proceso === "Reparación" &&
+          producto === "Intert/TOIP/TV" &&
+          motivo === "Sin señal"
+        ) {
+          document.getElementById("dinamico").innerHTML =
+            element.chbalance + element.rf89 + element.rf73;
+        } else if (
+          proceso === "Reparación" &&
+          producto === "TV" &&
+          motivo === "Sin señal"
+        ) {
+          document.getElementById("dinamico").innerHTML =
+            element.rf89 + element.rf73;
+        } else if (
+          proceso === "Instalación" &&
+          producto === "Intert/TOIP/TV" &&
+          motivo === "Sin señal"
+        ) {
+          document.getElementById("dinamico").innerHTML =
+            element.chbalance + element.rf89 + element.rf73;
+        } else if (
+          proceso === "Instalación" &&
+          producto === "Intert/TOIP" &&
+          motivo === "Sin señal"
+        ) {
+          document.getElementById("dinamico").innerHTML = element.chbalance;
+        } else if (
+          proceso === "Instalación" &&
+          producto === "TV" &&
+          motivo === "Sin señal"
+        ) {
+          document.getElementById("dinamico").innerHTML =
+            element.rf89 + element.rf73;
+        } else if (
+          proceso === "Reparación" &&
+          producto === "Intert/TOIP" &&
+          motivo === "Sin retorno"
+        ) {
+          document.getElementById("dinamico").innerHTML =
+            element.chbalance +
+            element.chx +
+            element.merx +
+            element.pdownx +
+            element.chy +
+            element.mery +
+            element.pdowny;
+        } else if (
+          proceso === "Reparación" &&
+          producto === "Intert/TOIP/TV" &&
+          motivo === "Sin retorno"
+        ) {
+          document.getElementById("dinamico").innerHTML = alert(
+            "No Aplica para TV"
+          );
+        } else if (
+          proceso === "Reparación" &&
+          producto === "TV" &&
+          motivo === "Sin retorno"
+        ) {
+          document.getElementById("dinamico").innerHTML = alert(
+            "No Aplica para TV"
+          );
+        } else if (
+          proceso === "Instalación" &&
+          producto === "Intert/TOIP" &&
+          motivo === "Sin retorno"
+        ) {
+          document.getElementById("dinamico").innerHTML =
+            element.chbalance +
+            element.chx +
+            element.merx +
+            element.pdownx +
+            element.chy +
+            element.mery +
+            element.pdowny;
+        } else if (
+          proceso === "Instalación" &&
+          producto === "Intert/TOIP/TV" &&
+          motivo === "Sin retorno"
+        ) {
+          document.getElementById("dinamico").innerHTML = element.noaplica;
+          alert("No Aplica para TV");
+        } else if (
+          proceso === "Instalación" &&
+          producto === "TV" &&
+          motivo === "Sin retorno"
+        ) {
+          document.getElementById("dinamico").innerHTML = element.noaplica;
+          alert("No Aplica para TV");
+        } else if (
+          proceso === "Reparación" &&
+          producto === "Intert/TOIP/TV" &&
+          motivo === "Robo de TAP"
+        ) {
+          document.getElementById("dinamico").innerHTML = element.noaplica;
+          alert(
+            "Obligatorio llenas campos activos, adjuntar foto y documentar en Observaciones"
+          );
+        } else if (
+          proceso === "Reparación" &&
+          producto === "Intert/TOIP" &&
+          motivo === "Robo de TAP"
+        ) {
+          document.getElementById("dinamico").innerHTML = element.noaplica;
+          alert(
+            "Obligatorio llenas campos activos, adjuntar foto y documentar en Observaciones"
+          );
+        } else if (
+          proceso === "Reparación" &&
+          producto === "TV" &&
+          motivo === "Robo de TAP"
+        ) {
+          document.getElementById("dinamico").innerHTML = element.noaplica;
+          alert(
+            "Obligatorio llenas campos activos, adjuntar foto y documentar en Observaciones"
+          );
+        } else if (
+          proceso === "Instalación" &&
+          producto === "Intert/TOIP/TV" &&
+          motivo === "Robo de TAP"
+        ) {
+          document.getElementById("dinamico").innerHTML = element.noaplica;
+          alert(
+            "Obligatorio llenas campos activos, adjuntar foto y documentar en Observaciones"
+          );
+        } else if (
+          proceso === "Instalación" &&
+          producto === "Intert/TOIP" &&
+          motivo === "Robo de TAP"
+        ) {
+          document.getElementById("dinamico").innerHTML = element.noaplica;
+          alert(
+            "Obligatorio llenas campos activos, adjuntar foto y documentar en Observaciones"
+          );
+        } else if (
+          proceso === "Instalación" &&
+          producto === "TV" &&
+          motivo === "Robo de TAP"
+        ) {
+          document.getElementById("dinamico").innerHTML = element.noaplica;
+          alert(
+            "Obligatorio llenas campos activos, adjuntar foto y documentar en Observaciones"
+          );
+        } else if (
+          proceso === "Reparación" &&
+          producto === "Intert/TOIP/TV" &&
+          motivo === "Red caída"
+        ) {
+          document.getElementById("dinamico").innerHTML = element.noaplica;
+          alert(
+            "Obligatorio llenas campos activos, adjuntar foto y documentar en Observaciones"
+          );
+        } else if (
+          proceso === "Reparación" &&
+          producto === "Intert/TOIP" &&
+          motivo === "Red caída"
+        ) {
+          document.getElementById("dinamico").innerHTML = element.noaplica;
+          alert(
+            "Obligatorio llenas campos activos, adjuntar foto y documentar en Observaciones"
+          );
+        } else if (
+          proceso === "Reparación" &&
+          producto === "TV" &&
+          motivo === "Red caída"
+        ) {
+          document.getElementById("dinamico").innerHTML = element.noaplica;
+          alert(
+            "Obligatorio llenas campos activos, adjuntar foto y documentar en Observaciones"
+          );
+        } else if (
+          proceso === "Instalación" &&
+          producto === "Intert/TOIP/TV" &&
+          motivo === "Red caída"
+        ) {
+          document.getElementById("dinamico").innerHTML = element.noaplica;
+          alert(
+            "Obligatorio llenas campos activos, adjuntar foto y documentar en Observaciones"
+          );
+        } else if (
+          proceso === "Instalación" &&
+          producto === "Intert/TOIP" &&
+          motivo === "Red caída"
+        ) {
+          document.getElementById("dinamico").innerHTML = element.noaplica;
+          alert(
+            "Obligatorio llenas campos activos, adjuntar foto y documentar en Observaciones"
+          );
+        } else if (
+          proceso === "Instalación" &&
+          producto === "TV" &&
+          motivo === "Red caída"
+        ) {
+          document.getElementById("dinamico").innerHTML = element.noaplica;
+          alert(
+            "Obligatorio llenas campos activos, adjuntar foto y documentar en Observaciones"
+          );
+        } else if (
+          proceso === "Reparación" &&
+          producto === "Intert/TOIP/TV" &&
+          motivo === "Daño físico"
+        ) {
+          document.getElementById("dinamico").innerHTML = element.noaplica;
+          alert(
+            "Obligatorio llenas campos activos, adjuntar foto y documentar en Observaciones"
+          );
+        } else if (
+          proceso === "Reparación" &&
+          producto === "Intert/TOIP" &&
+          motivo === "Daño físico"
+        ) {
+          document.getElementById("dinamico").innerHTML = element.noaplica;
+          alert(
+            "Obligatorio llenas campos activos, adjuntar foto y documentar en Observaciones"
+          );
+        } else if (
+          proceso === "Reparación" &&
+          producto === "TV" &&
+          motivo === "Daño físico"
+        ) {
+          document.getElementById("dinamico").innerHTML = element.noaplica;
+          alert(
+            "Obligatorio llenas campos activos, adjuntar foto y documentar en Observaciones"
+          );
+        } else if (
+          proceso === "Instalación" &&
+          producto === "Intert/TOIP/TV" &&
+          motivo === "Daño físico"
+        ) {
+          document.getElementById("dinamico").innerHTML = element.noaplica;
+          alert(
+            "Obligatorio llenas campos activos, adjuntar foto y documentar en Observaciones"
+          );
+        } else if (
+          proceso === "Instalación" &&
+          producto === "Intert/TOIP" &&
+          motivo === "Daño físico"
+        ) {
+          document.getElementById("dinamico").innerHTML = element.noaplica;
+          alert(
+            "Obligatorio llenas campos activos, adjuntar foto y documentar en Observaciones"
+          );
+        } else if (
+          proceso === "Instalación" &&
+          producto === "TV" &&
+          motivo === "Daño físico"
+        ) {
+          document.getElementById("dinamico").innerHTML = element.noaplica;
+          alert(
+            "Obligatorio llenas campos activos, adjuntar foto y documentar en Observaciones"
+          );
+        } else if (
+          proceso === "Reparación" &&
+          producto === "Intert/TOIP/TV" &&
+          motivo === "Pixelación"
+        ) {
+          document.getElementById("dinamico").innerHTML = element.noaplica;
+          alert("No Aplica para Internet/ToIP");
+        } else if (
+          proceso === "Reparación" &&
+          producto === "Intert/TOIP" &&
+          motivo === "Pixelación"
+        ) {
+          document.getElementById("dinamico").innerHTML = element.noaplica;
+          alert("No Aplica para Internet/ToIP");
+        } else if (
+          proceso === "Reparación" &&
+          producto === "TV" &&
+          motivo === "Pixelación"
+        ) {
+          document.getElementById("dinamico").innerHTML =
+            element.rf89 +
+            element.mer89 +
+            element.rf73 +
+            element.mer73 +
+            element.chxtv +
+            element.merxtv +
+            element.chytv +
+            element.merytv;
+        } else if (
+          proceso === "Instalación" &&
+          producto === "Intert/TOIP/TV" &&
+          motivo === "Pixelación"
+        ) {
+          document.getElementById("dinamico").innerHTML = element.noaplica;
+          alert("No Aplica para Internet/ToIP");
+        } else if (
+          proceso === "Instalación" &&
+          producto === "Intert/TOIP" &&
+          motivo === "Pixelación"
+        ) {
+          document.getElementById("dinamico").innerHTML = element.noaplica;
+          alert("No Aplica para Internet/ToIP");
+        } else if (
+          proceso === "Instalación" &&
+          producto === "TV" &&
+          motivo === "Pixelación"
+        ) {
+          document.getElementById("dinamico").innerHTML =
+            element.rf89 +
+            element.mer89 +
+            element.rf73 +
+            element.mer73 +
+            element.chxtv +
+            element.merxtv +
+            element.chytv +
+            element.merytv;
+        } else if (
+          proceso === "Reparación" &&
+          producto === "Intert/TOIP/TV" &&
+          motivo === "Niveles deficientes"
+        ) {
+          document.getElementById("dinamico").innerHTML =
+            element.chbalance +
+            element.chx +
+            element.ppqx +
+            element.merx +
+            element.pupx +
+            element.pdownx +
+            element.chy +
+            element.ppqy +
+            element.mery +
+            element.pupy +
+            element.pdowny +
+            element.rf89 +
+            element.mer89 +
+            element.rf73 +
+            element.mer73 +
+            element.chxtv +
+            element.merxtv +
+            element.chytv +
+            element.merytv;
+        } else if (
+          proceso === "Reparación" &&
+          producto === "Intert/TOIP" &&
+          motivo === "Niveles deficientes"
+        ) {
+          document.getElementById("dinamico").innerHTML =
+            element.chbalance +
+            element.chx +
+            element.ppqx +
+            element.merx +
+            element.pupx +
+            element.pdownx +
+            element.chy +
+            element.ppqy +
+            element.mery +
+            element.pupy +
+            element.pdowny;
+        } else if (
+          proceso === "Reparación" &&
+          producto === "TV" &&
+          motivo === "Niveles deficientes"
+        ) {
+          document.getElementById("dinamico").innerHTML =
+            element.rf89 +
+            element.mer89 +
+            element.rf73 +
+            element.mer73 +
+            element.chxtv +
+            element.merxtv +
+            element.chytv +
+            element.merytv;
+        } else if (
+          proceso === "Instalación" &&
+          producto === "Intert/TOIP/TV" &&
+          motivo === "Niveles deficientes"
+        ) {
+          document.getElementById("dinamico").innerHTML =
+            element.chbalance +
+            element.chx +
+            element.merx +
+            element.pdownx +
+            element.chy +
+            element.mery +
+            element.pdowny +
+            element.rf89 +
+            element.mer89 +
+            element.rf73 +
+            element.mer73 +
+            element.chxtv +
+            element.merxtv +
+            element.chytv +
+            element.merytv;
+        } else if (
+          proceso === "Instalación" &&
+          producto === "Intert/TOIP" &&
+          motivo === "Niveles deficientes"
+        ) {
+          document.getElementById("dinamico").innerHTML =
+            element.chbalance +
+            element.chx +
+            element.merx +
+            element.pdownx +
+            element.chy +
+            element.mery +
+            element.pdowny;
+        } else if (
+          proceso === "Instalación" &&
+          producto === "TV" &&
+          motivo === "Niveles deficientes"
+        ) {
+          document.getElementById("dinamico").innerHTML =
+            element.rf89 +
+            element.mer89 +
+            element.rf73 +
+            element.mer73 +
+            element.chxtv +
+            element.merxtv +
+            element.chytv +
+            element.merytv;
+        } else if (
+          proceso === "Reparación" &&
+          producto === "Intert/TOIP/TV" &&
+          motivo === "Intermitencia"
+        ) {
+          document.getElementById("dinamico").innerHTML =
+            element.chbalance +
+            element.chx +
+            element.ppqx +
+            element.merx +
+            element.pupx +
+            element.pdownx +
+            element.chy +
+            element.ppqy +
+            element.mery +
+            element.pupy +
+            element.pdowny +
+            element.rf89 +
+            element.mer89 +
+            element.rf73 +
+            element.mer73 +
+            element.chxtv +
+            element.merxtv +
+            element.chytv +
+            element.merytv;
+        } else if (
+          proceso === "Reparación" &&
+          producto === "Intert/TOIP" &&
+          motivo === "Intermitencia"
+        ) {
+          document.getElementById("dinamico").innerHTML =
+            element.chbalance +
+            element.chx +
+            element.ppqx +
+            element.merx +
+            element.pupx +
+            element.pdownx +
+            element.chy +
+            element.ppqy +
+            element.mery +
+            element.pupy +
+            element.pdowny;
+        } else if (
+          proceso === "Reparación" &&
+          producto === "TV" &&
+          motivo === "Intermitencia"
+        ) {
+          document.getElementById("dinamico").innerHTML =
+            element.rf89 +
+            element.mer89 +
+            element.rf73 +
+            element.mer73 +
+            element.chxtv +
+            element.merxtv +
+            element.chytv +
+            element.merytv;
+        } else if (
+          proceso === "Instalación" &&
+          producto === "Intert/TOIP/TV" &&
+          motivo === "Intermitencia"
+        ) {
+          document.getElementById("dinamico").innerHTML =
+            element.chbalance +
+            element.chx +
+            element.merx +
+            element.pdownx +
+            element.chy +
+            element.mery +
+            element.pdowny +
+            element.rf89 +
+            element.mer89 +
+            element.rf73 +
+            element.mer73 +
+            element.chxtv +
+            element.merxtv +
+            element.chytv +
+            element.merytv;
+        } else if (
+          proceso === "Instalación" &&
+          producto === "Intert/TOIP" &&
+          motivo === "Intermitencia"
+        ) {
+          document.getElementById("dinamico").innerHTML =
+            element.chbalance +
+            element.chx +
+            element.merx +
+            element.pdownx +
+            element.chy +
+            element.mery +
+            element.pdowny;
+        } else if (
+          proceso === "Instalación" &&
+          producto === "TV" &&
+          motivo === "Intermitencia"
+        ) {
+          document.getElementById("dinamico").innerHTML =
+            element.rf89 +
+            element.mer89 +
+            element.rf73 +
+            element.mer73 +
+            element.chxtv +
+            element.merxtv +
+            element.chytv +
+            element.merytv;
+        } else if (
+          proceso === "Reparación" &&
+          producto === "Intert/TOIP/TV" &&
+          motivo === "Otros"
+        ) {
+          document.getElementById("dinamico").innerHTML =
+            element.chbalance +
+            element.chx +
+            element.ppqx +
+            element.merx +
+            element.pupx +
+            element.pdownx +
+            element.chy +
+            element.ppqy +
+            element.mery +
+            element.pupy +
+            element.pdowny +
+            element.rf89 +
+            element.mer89 +
+            element.rf73 +
+            element.mer73 +
+            element.chxtv +
+            element.merxtv +
+            element.chytv +
+            element.merytv;
+        } else if (
+          proceso === "Reparación" &&
+          producto === "Intert/TOIP" &&
+          motivo === "Otros"
+        ) {
+          document.getElementById("dinamico").innerHTML =
+            element.chbalance +
+            element.chx +
+            element.ppqx +
+            element.merx +
+            element.pupx +
+            element.pdownx +
+            element.chy +
+            element.ppqy +
+            element.mery +
+            element.pupy +
+            element.pdowny;
+        } else if (
+          proceso === "Reparación" &&
+          producto === "TV" &&
+          motivo === "Otros"
+        ) {
+          document.getElementById("dinamico").innerHTML =
+            element.rf89 +
+            element.mer89 +
+            element.rf73 +
+            element.mer73 +
+            element.chxtv +
+            element.merxtv +
+            element.chytv +
+            element.merytv;
+        } else if (
+          proceso === "Instalación" &&
+          producto === "Intert/TOIP/TV" &&
+          motivo === "Otros"
+        ) {
+          document.getElementById("dinamico").innerHTML =
+            element.chbalance +
+            element.chx +
+            element.merx +
+            element.pdownx +
+            element.chy +
+            element.mery +
+            element.pdowny +
+            element.rf89 +
+            element.mer89 +
+            element.rf73 +
+            element.mer73 +
+            element.chxtv +
+            element.merxtv +
+            element.chytv +
+            element.merytv;
+        } else if (
+          proceso === "Instalación" &&
+          producto === "Intert/TOIP" &&
+          motivo === "Otros"
+        ) {
+          document.getElementById("dinamico").innerHTML =
+            element.chbalance +
+            element.chx +
+            element.merx +
+            element.pdownx +
+            element.chy +
+            element.mery +
+            element.pdowny;
+        } else if (
+          proceso === "Instalación" &&
+          producto === "TV" &&
+          motivo === "Otros"
+        ) {
+          document.getElementById("dinamico").innerHTML =
+            element.rf89 +
+            element.mer89 +
+            element.rf73 +
+            element.mer73 +
+            element.chxtv +
+            element.merxtv +
+            element.chytv +
+            element.merytv;
+        } else {
+          document.getElementById("dinamico").innerHTML = "";
+        }
+      }
+
+      const element = {
+        chbalance: `<div class="form-group row">
+                        <label for="tred" class="col-12 col-sm-2">Tipo de Red</label>
+                        <SELECT name="Tipo de Red" 
+                        class="form-control col-10 offset-1 col-sm-4 offset-sm-0" id="tred">
+                            <option>750</option>
+                            <option>870</option>
+                            <option>1000</option>
+                        </SELECT>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <label for="rf14" class="col-12 col-sm-2">RF CH 14</label>
+                        <input type="number" name="RF14" id="rf14" class="form-control col-10 offset-1 col-sm-4 offset-sm-0">
+                    </div>
+                    
+                    
+                    <div class="form-group row">
+                        <label for="rf120" class="col-12 col-sm-2">RF CH 120</label>
+                        <input type="number" name="RF120" id="rf120" placeholder="Aplica a 750" 
+                        class="form-control col-10 offset-1 col-sm-4 offset-sm-0">
+                    </div>
+                    
+                    <div class="form-group row">
+                        <label for="rf135" class="col-12 col-sm-2">RF CH 135</label>
+                        <input type="number" name="RF135" id="rf135" placeholder="Aplica a 870" 
+                        class="form-control col-10 offset-1 col-sm-4 offset-sm-0">
+                    </div>
+                        
+                    <div class="form-group row">
+                        <label for="rf157" class="col-12 col-sm-2">RF CH 157</label>
+                        <input type="number" name="RF157" id="rf157" placeholder="Aplica a 1000" 
+                        class="form-control col-10 offset-1 col-sm-4 offset-sm-0">
+                    </div>`,
+
+        chx: `<div class="form-group row">
+                        <div class="col-12">
+                            <h5>Valores y pruebas docsis con Equipo de Medida. Indicar 2 canales diferentes a los relacionados anteriormente que son los de Balanceo</h5>
+                        </div>
+                    </div>
+
+			
+
+
+                    <div class="form-group row">
+                        <label for="chx" class="col-12 col-sm-2">CH x</label>
+                        <input type="number" name="CHx" placeholder="CH diferete a 120,135,157" id="chx" 
+                        class="col-10 offset-1 col-sm-4 offset-sm-0 form-control">
+                    </div>
+                    <div class="form-group row">
+                        <label for="frx" class="col-12 col-sm-2">RF CH x</label>
+                        <input type="number" name="RFx" placeholder="dBmV" id="rfx" 
+                        class="col-10 offset-1 col-sm-4 offset-sm-0 form-control">
+                    </div>`,
+
+        ppqx: `<div class="form-group row">
+                        <label for="ppqx" class="col-12 col-sm-2">Perdida de Paquetes CH x</label>
+                        <input type="number" name="PerdidaPaqx" id="ppqx" placeholder="Aplica Reparaciones"
+                        class="col-10 offset-1 col-sm-4 offset-sm-0 form-control">
+                    </div>`,
+
+        merx: `<div class="form-group row">
+                        <label for="merx" class="col-12 col-sm-2">MER CHx </label>
+                        <input type="number" name="MERx" id="merx"
+                        class="col-10 offset-1 col-sm-4 offset-sm-0 form-control">
+                    </div>
+                    <div class="form-group row">
+                        <label for="berx" class="col-12 col-sm-2">BER CHx </label>
+                        <input type="text" name="BERx" id="berx" placeholder="1,0E-09"
+                        class="col-10 offset-1 col-sm-4 offset-sm-0 form-control">
+                    </div>`,
+
+        pupx: `<div class="form-group row">
+                        <label for="pupx" class="col-12 col-sm-2">Potencia UP CHx</label>
+                        <input type="number" name="PotUPx" id="pupx" placeholder="Aplica Reparaciones"
+                        class="col-10 offset-1 col-sm-4 offset-sm-0 form-control">
+                    </div>`,
+
+        pdownx: `<div class="form-group row">
+                        <label for="pdownx" class="col-12 col-sm-2">Potencia DOWN CHx</label>
+                        <input type="number" name="PotDWx" id="pdownx" class="col-10 offset-1 col-sm-4 offset-sm-0 form-control">
+                    </div>`,
+
+			
+
+			
+			
+
+        chy: `<div class="form-group row">
+                        <label for="chy" class="col-12 col-sm-2">CH y</label>
+                        <input type="number" name="CHy" placeholder="CH diferete a 120,135,157" id="chy"
+                        class="col-10 offset-1 col-sm-4 offset-sm-0 form-control">
+                    </div>
+                    <div class="form-group row">
+                        <label for="rfy" class="col-12 col-sm-2">RF CH y</label>
+                        <input type="number" name="RFy" placeholder="dBmV" id="rfy"
+                        class="col-10 offset-1 col-sm-4 offset-sm-0 form-control">
+                    </div>`,
+
+        ppqy: `<div class="form-group row">
+                        <label for="ppqy" class="col-12 col-sm-2">Perdida de Paquetes CH y</label>
+                        <input type="number" name="PerdidaPaqy" id="ppqy" placeholder="Aplica Reparaciones"
+                        class="col-10 offset-1 col-sm-4 offset-sm-0 form-control">
+                    </div>`,
+
+        mery: `<div class="form-group row">
+                        <label for="mery" class="col-12 col-sm-2">MER CHy</label>
+                        <input type="number" name="MERy" id="mery"
+                        class="col-10 offset-1 col-sm-4 offset-sm-0 form-control">
+                    </div>
+                        <br>
+                    <div class="form-group row">
+                        <label for="bery" class="col-12 col-sm-2">BER CHy</label>
+                        <input type="text" name="BERy" id="bery" placeholder="1,0E-09"
+                        class="col-10 offset-1 col-sm-4 offset-sm-0 form-control">
+                    </div>`,
+
+        pupy: `<div class="form-group row">
+                        <label for="pupy" class="col-12 col-sm-2">Potencia UP CHy</label>
+                        <input type="number" name="PotUPy" id="pupy" placeholder="Aplica Reparaciones"
+                        class="col-10 offset-1 col-sm-4 offset-sm-0 form-control">
+                    </div>`,
+
+        pdowny: `<div class="form-group row">
+                        <label for="pdowny" class="col-12 col-sm-2">Potencia DOWN CHy</label>
+                        <input type="number" name="PotDWy" id="pdowny"
+                        class="col-10 offset-1 col-sm-4 offset-sm-0 form-control">
+                    </div>`,
+
+			
+			
+
+        rf89: `<div class="form-group row">
+                        <h5 class="col-12">Datos para Televisión HFC</h5>
+                        <h6 class="col-12">Obligatorio llenar CH 89 y 73, los otros si se detecta error en canal específico</h6>
+
+			
+
+                    </div>
+                    <div class="form-group row">
+                        <label for="rf89" class="col-12 col-sm-2">RF CH 89</label>
+                        <input type="number" name="RF89" id="rf89"
+                        class="col-10 offset-1 col-sm-4 offset-sm-0 form-control">
+                    </div>`,
+
+        mer89: `<div class="form-group row">
+                        <label for="mer89" class="col-12 col-sm-2">MER 89</label>
+                        <input type="number" name="MER89" id="mer89"
+                        class="col-10 offset-1 col-sm-4 offset-sm-0 form-control">
+                    </div>
+                    <div class="form-group row"><br>
+                        <label for="ber89" class="col-12 col-sm-2">BER 89</label>
+                        <input type="text" name="BER89" id="ber89" placeholder="1,0E-09"
+                        class="col-10 offset-1 col-sm-4 offset-sm-0 form-control">
+                    </div>`,
+
+        rf73: `<div class="form-group row">
+                        <label for="rf73" class="col-12 col-sm-2">RF CH 73</label>
+                        <input type="number" name="RF73" id="rf73"
+                        class="col-10 offset-1 col-sm-4 offset-sm-0 form-control">
+                    </div>`,
+
+        mer73: `<div class="form-group row">
+                        <label for="" class="col-12 col-sm-2">MER 73</label>
+                        <input type="number" name="MER73" id="mer73"
+                        class="col-10 offset-1 col-sm-4 offset-sm-0 form-control">
+                    </div>
+                    <div class="form-group row">
+                        <label for="" class="col-12 col-sm-2">BER 73</label>
+                        <input type="text" name="BER73" id="ber73" placeholder="1,0E-09"
+                        class="col-10 offset-1 col-sm-4 offset-sm-0 form-control">
+                    </div>`,
+			
+
+        chxtv: `<div class="form-group row">
+                        <label for="chxtv" class="col-12 col-sm-2">CH xTV</label>
+                        <input type="number" name="CHxTV" placeholder="CH diferete a 89 y 73" id="chxtv"
+                        class="col-10 offset-1 col-sm-4 offset-sm-0 form-control">
+                    </div>
+                    <div class="form-group row">
+                        <label for="rfxtv" class="col-12 col-sm-2">RF CH xTV</label>
+                        <input type="number" name="RFxTV" placeholder="dBmV" id="rfxtv"
+                        class="col-10 offset-1 col-sm-4 offset-sm-0 form-control">
+                    </div>`,
+
+        merxtv: `<div class="form-group row">
+                        <label for="" class="col-12 col-sm-2">MER CHxTV</label>
+                        <input type="number" name="MERxTV" id="merxtv"
+                        class="col-10 offset-1 col-sm-4 offset-sm-0 form-control">
+                    </div>
+                    <div class="form-group row">
+                        <label for="" class="col-12 col-sm-2">BER CHxTV</label>
+                        <input type="text" name="BERxTV" id="berxtv" placeholder="1,0E-09"
+                        class="col-10 offset-1 col-sm-4 offset-sm-0 form-control">
+                    </div>`,
+
+        chytv: `<div class="form-group row">
+                        <label for="chytv" class="col-12 col-sm-2">CH yTV</label>
+                        <input type="number" name="CHyTV" placeholder="CH diferete a 89 y 73" id="chytv"
+                        class="col-10 offset-1 col-sm-4 offset-sm-0 form-control">
+                    </div>
+                    <div class="form-group row">
+                        <label for="rfytv" class="col-12 col-sm-2">RF CH yTV</label>
+                        <input type="number" name="RFyTV" placeholder="dBmV" id="rfytv"
+                        class="col-10 offset-1 col-sm-4 offset-sm-0 form-control">
+                    </div>`,
+
+        merytv: `<div class="form-group row">
+                        <label for="merytv"  class="col-12 col-sm-2">MER CHyTV</label>
+                        <input type="number" name="MERyTV" id="merytv"
+                        class="col-10 offset-1 col-sm-4 offset-sm-0 form-control">
+                    </div>
+                    <div class="form-group row">
+                        <label for="berytv"  class="col-12 col-sm-2">BER CHyTV</label>
+                        <input type="text" name="BERyTV" id="berytv" placeholder="1,0E-09"
+                        class="col-10 offset-1 col-sm-4 offset-sm-0 form-control">
+                    </div>`,
+        noaplica: `<div id="">
+                        <label for=""></label>
+                    </div><br>`,
+      };
+      function unirDatos() {
+        let EI = "EI";
+        let text = "";
+        let intermitencia = false;
+        let form = document.getElementById("escalamiento").elements;
+        for (let index = 0; index < form.length; index++) {
+          const element = form[index];
+          if (form[index].type == "radio") {
+            if (form[index].checked) {
+              text += `||${form[index].name}:${form[index].value}`;
+            }
+          } else if (form[index].type != "button") {
+            if (
+              form[index].name == "Motivo del Escalamiento" &&
+              form[index].value == "Intermitencia"
+            ) {
+              text += `||Motivo del Escalamiento:Niveles deficientes`;
+              intermitencia = true;
+            } else {
+              text += `||${form[index].name}:${form[index].value}`;
+            }
+          }
+        }
+
+        if (intermitencia) {
+          document.getElementById("plantilla").value =
+            EI + text + "MTE:Intermitencia";
+        } else {
+          document.getElementById("plantilla").value = EI + text;
+        }
+      }
+      function limpiar() {
+        let form = document.getElementById("escalamiento").elements;
+        document.getElementById("plantilla").value="";
+        for (let index = 0; index < form.length; index++) {
+          const element = form[index];
+          if (form[index].type == "radio") {
+            if (form[index].checked) {
+              form[index].checked = false;
+            }
+          } else if (form[index].type != "button") {
+            form[index].value = "";
+          }
+        }
+        let dina = document.getElementById("dinamico");
+        while (dina.firstChild) {
+        dina.removeChild(dina.firstChild);
+        }
+
+      }
+
+      function copiarDatos() {
+        //creo variable con los datos de la observación
+        let datos = document.escalamiento.observ.value;
+        //console.log(datos);
+        //selecciono el campo observación
+        plantilla.select();
+        //copio lo seleccionado al portapapeles
+        document.execCommand("Copy");
+      }
+
+      function puntos() {
+        let mac = document.getElementById('mac');
+        let texto = mac.value
+        let nueva = ''
+        for(let i=0; i<texto.length; i++){
+          nueva += texto[i]
+           if((i+1)%2 == 0 && i!== 11){
+            nueva += ':'
+          }
+          
+        }
+        mac.value = nueva.toUpperCase()     
+      }
+
+      function puntosm() {
+        let maceqm = document.getElementById('maceqm');
+        let texto = maceqm.value
+        let nuevam = ''
+        for(let i=0; i<texto.length; i++){
+          nuevam += texto[i]
+           if((i+1)%2 == 0 && i!== 11){
+            nuevam += ':'
+          }
+          
+        }
+        maceqm.value = nuevam.toUpperCase()
+      }
+
+
+    </script>
+  </body>
+</html>

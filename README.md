@@ -1,6 +1,7 @@
 # javascriptCode
 # https://code.gitdarwinfredy.repl.co
-```display: flex;
+```html
+display: flex;
 1* Define que una caja será flexbox de bloque O flexbox de linea*/
 /* flex inline-flex*/
  flex-direction: row-reverse;

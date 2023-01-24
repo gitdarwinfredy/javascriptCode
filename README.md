@@ -1,6 +1,6 @@
 # javascriptCode
 # https://code.gitdarwinfredy.repl.co
-```html
+```css
 .container{
 bachground color: #333;
 height: 30vh;
@@ -26,11 +26,9 @@ align-content: stretch;
 /* Define la alineaciòn de Jos hijos eno ee transversal (cross axis), NO funciona cuando los
 hijos esten en una sola linea, es decir cuando flex-wrap tiene el valor de nowrap NO FUNCIONA
 Flex-start/flex-end/center/space-between/space-around//space-evenly/stretch
-
 .item{
 border: medium solid #999;
 //width: 20%;//
 /*heigth: 20%; */
 background-color: #666;
-
 }```

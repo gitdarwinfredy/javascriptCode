@@ -58,17 +58,10 @@ if (!conteo){
 // boton para contar texto
 
 const forms = document.getElementById('forms');
+let conteoTexto2="";
 forms.addEventListener('submit', function (e){
-
 const input= document.getElementById('input').value
-
-console.log(input)
-const fila = e.target
-console.log(fila)
-
-    let conteoTexto2="" 
-
-if (!input){
+    if (!input){
     alert('no ha ingresado Texto')
     } else{
     conteoTexto2 = `la cadena es ${input.length}`
@@ -86,11 +79,11 @@ if (!input){
 //countText('hola mundo');
 
 //funcion para recortar un texto
-recortText = (cadena= '', longitud = undefined)=>
+const recortText = (cadena= '', longitud = undefined)=>
     (!cadena)
-    ?console.warn('no ingreso texto')
+    ?console.log('no ingreso texto')
     :(longitud === undefined)
-    ?console.warn('no ingresaste una longitud a recortar')
+    ?console.log('no ingresaste una longitud a recortar')
     :console.info(cadena.slice(0,longitud))
 
 recortText(4);
@@ -98,12 +91,14 @@ recortText("hola mundo", 4);
 
 
 //funcion para agregar un espacio a un texto
-separadorTexto =(text = "", separador = undefined, recort = undefined)=>
+const separadorTexto =(text = "", separador = undefined, recort = undefined)=>
 (!text)
-    ? console.warn('Favor ingresar un texto')
+    ? console.log('Favor ingresar un texto')
     : (separador === undefined)
-        ?console.warn('no ingresaste el tipo de separador')
+        ?console.log('no ingresaste el tipo de separador')
         :console.info(text.split(separador));
+
+        
 
 
 separadorTexto();
@@ -128,28 +123,4 @@ repeatText("hola",2);
 
 // crea una funcion para agregar un valor ; despues del segundo numero
 
-var miString = "BCCFDEFEAZZa" 
-var result,results = ""
-let elements = ""
-let text1,text2,text3,text4,text5,text6 = ""
 
-
-text1 =miString.slice(0,2);
-text2 =miString.slice(2,4);
-text3 =miString.slice(4,6);
-text4 =miString.slice(6,8);
-text5 =miString.slice(8,10);
-text6 =miString.slice(10,12);
-
-//result = elements.join('')
-result = `${text1}:${text2}:${text3}:${text4}:${text5}:${text6} hola mundo`
-elements = result.toUpperCase()
-results = elements.split(' ').join('-');
-
-// for (i=0;i<miString.length-1;i++) { 
-//    	//result += miString[i]
-//    	result += `${miString.charAt(i)}:` 
-// } 
-// result += miString.charAt(miString.length-1)
-
-console.log(results)

@@ -1,39 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-      <h1>Hola Buen Dia ejercicios de programacion</h1>
-    
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link rel="shortcut icon" href="./img/Img2.png" type="image/x-icon" />
+    <link rel="stylesheet" href="index3.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  </head>
+  <style></style>
 
-    <button  onclick="usuario()" > Ingreso</button>
-    <div id="saludo" style="background:rgb(0, 255, 4)"></div>
-    <div id="suma" style="background:rgb(255, 166, 0)"></div>
-    <button  onclick="countText()" >contador de Texto</button>
-    <div id="contar" style="background:rgb(255, 166, 0)"></div>
-    <form  action="#" id="forms">
-        <input type="text" id="input">
-        <button >Mostrar</button>
+  <body>
+    <header class="cabeceras header">
+      <div class="logo">
+        <img src="img/Img2.png" style="border-radius: 20px; width: 50px" />
+      </div>
 
-    <div id="text2" style="background:rgb(255, 166, 0)"></div> 
+      <nav class="menu">
+        <ul>
+          <li><a href="#articulos"><i class="bi bi-menu-up"> </i>Conten</a></li>
+          <li><a href="#" onclick="responsive()"><i class="bi bi-view-stacked"> </i>FlexBox</a></li>
+          <li><a href="#"><i class="bi bi-peace-fill"> </i>Header</a></li>
+          <li><a href="grid.html" ><i class="bi bi-back"> </i>Grids-Ls</a></li>
+          <li><a href="grid2.html"><i class="bi bi-window-sidebar"> </i>
+            Grids-lb</a></li>
+          <li></li>
+            <li></li>
+            <li></li>
+            
 
-    </form>
-    <form action="#" id="formPuntos">
-        <input type="text" id="puntos">
-        <button>Adiciona puntos Mac</button>
-    </form>
-     
-    <div id="text3" style="background: gainsboro"></div>
+        </ul>
+      </nav>
 
-    
-    
+      <!-- <button onclick="responsive()">responsive</button> -->
+    </header>
+    <div class="main2" id="main2">
+      <h1>Good Morning</h1>
+    </div>
+    <main id="main">
+      <div>
+        <h3 id="Idresponsive"></h3>
+      </div>
+      <article class="hero-image">
+        <div>
+          <h1>Flexbox is fucking COOL</h1>
+        </div>
+      </article>
 
-    <script src="code.js" ></script>
-    <script src="code2.js"></script>
-    <script src="code3.js"></script>
-</body>
+      <section class="contenido">
+        <article class="articulos" id="articulos">
+          <h4>Jovenes Emprendedores</h4>
+          <p>
+            Cuenta con distintas instalaciones al servicio del estudiante. Está
+            formado por un edificio con más de 3.500 m2 útiles, a los que se
+            suman más de 6.000m2 propios de zonas comunes. Ubicado en la
+            emblemática calle de Arturo Soria, forma parte del corazón de la
+            ciudad de Madrid. Además, de encontrarse muy próximo a la zona
+            empresarial Cuatro Torres Business Area (CTBA) y a la estación de
+            tren Madrid-Chamartín-Clara Campoamor.
+          </p>
+        </article>
+        <article class="articulos">
+          <img src="https://placeimg.com/640/480/any" alt="gente" />
+        </article>
+      </section>
+
+      <section class="contenido flex-reverse">
+        <article class="articulos">
+          <h4>Jovenes Didacticos</h4>
+          <p>
+            Cuenta con distintas instalaciones al servicio del estudiante. Está
+            formado por un edificio con más de 3.500 m2 útiles, a los que se
+            suman más de 6.000m2 propios de zonas comunes. Ubicado en la
+            emblemática calle de Arturo Soria, forma parte del corazón de la
+            ciudad de Madrid. Además, de encontrarse muy próximo a la zona
+            empresarial Cuatro Torres Business Area (CTBA) y a la estación de
+            tren Madrid-Chamartín-Clara Campoamor.
+          </p>
+        </article>
+        <article class="articulos">
+          <img src="https://placeimg.com/640/480/sepia" alt="gente" />
+        </article>
+      </section>
+
+      <section class="contenido">
+        <article class="articulos">
+          <h4>Date programing vacations</h4>
+          <form>
+            <p>Name: <input type="text" value="Your name" /></p>
+
+            <p><input type="checkbox" checked /> Travel</p>
+
+            <p><input type="checkbox" /> Sports</p>
+
+            <!-- <p><button type="reset">Reset</button></p> -->
+
+            <label for="amount"
+              >How many tickets? (You can buy 2-6 tickets)</label
+            >
+            <input name="amount" type="number" min="2" max="6" value="4" />
+
+            <label for="dep"
+              >Departure Date: (Whole year 2022 is acceptable)</label
+            >
+            <input
+              name="dep"
+              type="date"
+              min="2023-01-01"
+              max="2025-12-31"
+              value="2023-01-01"
+            />
+
+            <label for="ret"
+              >Return Date: (Whole year 2022 is acceptable)</label
+            >
+            <input name="ret" type="date" min="2023-01-01" max="2025-12-31" />
+
+            <label for="">Enviar information</label>
+            <input type="submit" value="Enviar" />
+            <button type="button">Asignment</button>
+            <button type="reset">Release</button>
+          </form>
+        </article>
+        <article class="articulos"></article>
+      </section>
+    </main>
+    <footer class="cabeceras">Derechos Reservados de Autor</footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index3.js"></script>
+  </body>
 </html>

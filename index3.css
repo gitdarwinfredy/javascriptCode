@@ -1,120 +1,101 @@
 *,
 *::after,
-*::before{
+*::before {
   box-sizing: border-box;
-  margin:0;
-  padding:0;
-  border:0;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
-
-
-img{
+img {
   max-width: 100%;
   height: auto;
-
+  border-radius: 5% ;
 }
 
-body{
+body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-
-
-.header{
+.header {
   display: flex;
   position: fixed;
   width: 100%;
-  
+
   flex-flow: row wrap;
   align-items: center;
   text-align: center;
   justify-content: center;
-  
-
 }
 
-.hero-image{
+.hero-image {
   min-height: 100vh;
   justify-content: center;
   align-items: center;
   background-image: url("https://placeimg.com/1280/720/animals");
   background-repeat: no-repeat;
-  color: #FFF;
+  color: #fff;
+  
 }
 
-.hero-image div{
+.hero-image div {
   min-height: inherit;
   display: flex;
   background-color: rgba(0, 0, 0, 0.75);
   align-items: center;
-  justify-content: center
-  
+  justify-content: center;
 }
 
 @media screen and (min-width: 1024px) {
-  .header{
+  .header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
   }
 
-  .menu ul{
-  display: flex;
-  }
-
-  .contenido{
+  .menu ul {
     display: flex;
-  
+  }
+
+  .contenido {
+    display: flex;
+    color: blue;
     text-align: justify;
     align-items: center;
     justify-items: center;
-          
   }
 
-  
-  .articulos{
+  .articulos {
     padding: 20px;
-    
+
     flex: 0 0 50%;
     /* align-items: center;
     justify-content: center;
     text-align: center; */
   }
 
-  .menu li{
-  padding: 5px !important;
-  margin: 0 !important;
-  
-   }
+  .menu li {
+    padding: 5px !important;
+    margin: 0 !important;
+  }
 }
 
-.contenido{
-        
-    text-align: justify;
-    align-items: center;
-    justify-items: center;
-          
-  }
+.contenido {
+  text-align: justify;
+  align-items: center;
+  justify-items: center;
+}
 
-.menu li{
+.menu li {
   padding: 1em;
   margin: 10px;
-  
 }
 
-
-.menu ul{
+.menu ul {
   list-style-type: none;
-  
-  
 }
-
-
-
 
 .menu a {
   color: white;
@@ -123,68 +104,57 @@ body{
   padding: 20px;
   border-radius: 20px;
   transition: 3s;
- 
-  
 }
 
-
-
-.menu a:hover{
+.menu a:hover {
   background-color: rgba(212, 15, 15, 0.75);
- transition: 3s;
+  transition: 3s;
 }
 
-main{
+main {
   flex-grow: 1;
 }
 
-.cabeceras{
+.cabeceras {
   padding: 1rem;
   background-color: rgba(233, 7, 7, 0.833);
-  color: #EEE;
+  color: #eee;
   transition: 3s;
-
-
 }
 
-.header:hover{
+.header:hover {
   background-color: rgba(37, 80, 106, 0.75);
   transition: 3s;
-  
 }
 
-
-
-
-
-.flex-reverse{
-flex-direction:row-reverse ;
+.flex-reverse {
+  flex-direction: row-reverse;
 }
 
-
-h4{
-background-color: blue;
-text-align: center;
-color: white;
-
+h4 {
+  background-color: blue;
+  text-align: center;
+  color: #DDD !important;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
-
-footer{
-  
+footer {
   text-align: center;
   font: bold;
   font-size: 30px;
   color: blue !important;
   transition: 3s;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
 }
 
-form{
+form {
   background-color: rgb(15, 15, 15);
   padding: 100px;
   color: white;
   text-align: center;
-  
+
   /* align-items: center; */
 }
 
@@ -198,16 +168,15 @@ label {
   border: medium solid rgb(91, 72, 161);
   border-radius: 20px;
   margin-top: 1em;
-  text-align: center  ;
-  
+  text-align: center;
 }
 
-input{
-width: 100%;
-height: 30px;
-text-align: center;
-color: rgb(34, 15, 211);
-background-color: rgb(227, 223, 235);
+input {
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  color: rgb(34, 15, 211);
+  background-color: rgb(227, 223, 235);
 }
 
 /* input:in-range {
@@ -216,24 +185,22 @@ border: medium solid rgb(91, 72, 161);
   background-color: rgb(56, 13, 197);
 } */
 
-button{
-background-color: blue;
-width: 100%;
-height: 30px;
-margin-top: 1em;
-/* margin: 10px; */
-text-align: center;
+button {
+  background-color: blue;
+  width: 100%;
+  height: 30px;
+  margin-top: 1em;
+  /* margin: 10px; */
+  text-align: center;
 
-color: white;
+  color: white;
 }
 
-.main2{
-visibility: hidden;
-
+.main2 {
+  visibility: hidden;
 }
 
-
-footer:hover{
+footer:hover {
   background-color: aqua;
   transition: 3s;
 }
